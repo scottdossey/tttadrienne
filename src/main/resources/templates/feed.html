@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"> 
+	<head>			
+		<title>Tweet Feed</title>
+		<th:block th:replace="fragments/header">			
+		</th:block>		
+	</head>
+	<body>
+		<div class="container">
+			<div th:replace="fragments/navbar"></div>	
+			<ul class="nav nav-tabs">
+				<li role="presentation" 
+				    th:classappend="${filter == 'all' ? 'active' : ''}">
+				    <a href="/tweets">All</a>
+				</li>
+				<li role="presentation" 
+				    th:classappend="${filter == 'following' ? 'active' : ''}">
+				    <a href="/tweets?filter=following">Following</a>
+				</li>				
+			</ul>
+			<br/>
+			<div th:replace="fragments/tweetlistheader"></div>		
+			<div th:replace="fragments/tweetlist"></div>					
+		</div>
+	</body>
+</html>

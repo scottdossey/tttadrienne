@@ -1,0 +1,10 @@
+<div th:if="${not #lists.isEmpty(tweetList)}">
+	<h3>Tweets</h3>
+</div>
+
+<div th:if="${#lists.isEmpty(tweetList) and filter != 'following'}">
+	<h3>No tweets have been created yet</h3>
+</div>
+<div th:if="${#lists.isEmpty(tweetList) and filter == 'following'}">
+	<h3>No tweets have been created by your followers</h3>
+</div>
